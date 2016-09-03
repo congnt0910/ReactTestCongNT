@@ -10,7 +10,6 @@ import {
 
 
 import NavigationBar from 'react-native-navbar';
-import {Router, Route, Animations, Schema} from 'react-native-redux-router';
 
 class NavBarBase extends Component {
     onPrev() {
@@ -25,8 +24,6 @@ class NavBarBase extends Component {
     }
 
     render() {
-        var Actions = this.props.routes;
-        console.log("Props : " , this.props);
         return <NavigationBar style={styles.navBar}
                               titleColor='white'
                               buttonsColor='white'

@@ -12,9 +12,9 @@ import {connect} from 'react-redux';
 
 import {Actions, ActionConst, Router, Reducer, Scene} from 'react-native-router-flux';
 
-import Home from './components/homePage';
+import Home from './components/HomePage';
 import ResultPage from './components/ResultPage';
-import DetailsPage from './components/detailsPage';
+import DetailsPage from './components/DetailsPage';
 
 // define this based on the styles/dimensions you use
 const getSceneStyle = (/* NavigationSceneRendererProps */ props, computedProps) => {
@@ -59,14 +59,12 @@ class App extends Component {
         const defaultReducer = new Reducer(params);
         const {dispatch} = this.props;
         return (state, action) => {
-            // console.log('ACTION:', action);
             dispatch(action);
             return defaultReducer(state, action);
         };
     }
 
     render() {
-        console.log('app', this.props)
         return (
             <Router createReducer={this.reducerCreate.bind(this)} getSceneStyle={getSceneStyle}
                     dispatch={this.props.dispatch} scenes={scenes}/>
@@ -89,12 +87,7 @@ function mapStateToProps(state) {
         items: []
     };
 
-    console.log({
-        search,
-        selectStopPoint,
-        isFetching,
-        // listResult
-    });
+    
     return {
         search,
         selectStopPoint,

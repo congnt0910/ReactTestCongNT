@@ -18,14 +18,11 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import Button from './button';
 
 import {requestSelectStopPoint} from '../actions'
-// import {fetchListStopPoint} from '../sagas';
 import {store, onChange, removeOnChange} from '../store'
 import {Actions} from 'react-native-router-flux';
 
-var windowWidth = Dimensions.get('window').width;
 import Loading from './Loading';
 
 class ResultPage extends Component {
@@ -69,7 +66,6 @@ class ResultPage extends Component {
 
     handleDetail(rowData, e) {
         e.preventDefault();
-        // console.log(rowData);
         const {dispatch} = this.props;
         dispatch(requestSelectStopPoint(rowData.id));
     }
